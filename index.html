@@ -1,53 +1,397 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portofolio</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: #0f1115; color: #e8eaed;
-    line-height: 1.6; padding: 24px;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; }
-  header { padding: 48px 0 32px; }
-  h1 { font-size: 32px; letter-spacing: -0.5px; }
-  .peran { color: #8ab4f8; font-weight: 600; margin-top: 4px; }
-  .tentang { margin-top: 16px; color: #a8adb7; }
-  h2 { font-size: 18px; margin: 32px 0 12px; }
-  .proyek {
-    background: #171a21; border: 1px solid #242832;
-    border-radius: 12px; padding: 16px; margin-bottom: 12px;
-  }
-  .proyek h3 { font-size: 16px; }
-  .proyek p { color: #a8adb7; font-size: 14px; margin-top: 4px; }
-  a { color: #8ab4f8; text-decoration: none; }
-  footer { margin: 48px 0 24px; font-size: 13px; color: #6b7280; }
-</style>
+<title>Nama Kamu — Perancang Antarmuka &amp; Pengembang Web</title>
+<meta name="description" content="Portofolio Nama Kamu, perancang dan pengembang antarmuka web dari Indonesia. Situs yang rapi, cepat, dan aksesibel.">
+<meta name="author" content="Nama Kamu">
+<meta name="theme-color" content="#F0EEEB">
+<link rel="canonical" href="https://namakamu.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nama Kamu — Perancang Antarmuka &amp; Pengembang Web">
+<meta property="og:description" content="Situs yang rapi, cepat, dan aksesibel.">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230E0E0C'/><text x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23F0EEEB' text-anchor='middle'>N</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nama Kamu",
+  "jobTitle": "Front-end Developer & UI Designer",
+  "address": { "@type": "PostalAddress", "addressCountry": "ID" },
+  "email": "mailto:email@kamu.com",
+  "url": "https://namakamu.com/",
+  "sameAs": ["https://github.com/usernamekamu", "https://linkedin.com/in/usernamekamu"]
+}
+</script>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <h1>WannDesign</h1>
-      <div class="peran">Web Developer</div>
-      <p class="tentang">Saya suka membuat website yang rapi dan mudah dipakai.</p>
-    </header>
+<a class="skip" href="#main">Lewati ke konten utama</a>
 
-    <h2>Proyek</h2>
-    <div class="proyek">
-      <h3>Proyek Pertama</h3>
-      <p>Deskripsi singkat proyek ini.</p>
-      <p><a href="#">Lihat</a></p>
-    </div>
-    <div class="proyek">
-      <h3>Proyek Kedua</h3>
-      <p>Deskripsi singkat proyek ini.</p>
-      <p><a href="#">Lihat</a></p>
-    </div>
+<!-- ══════════════════════════════════════════════════════════
+     KROME: kursor kustom, garis progres baca
+     ══════════════════════════════════════════════════════════ -->
+<div class="cursor" data-cursor aria-hidden="true">
+  <span class="cursor__ring"></span>
+  <span class="cursor__dot"></span>
+  <em class="cursor__label" data-cursor-label></em>
+</div>
 
-    <footer>© 2026 WannDesign</footer>
+<div class="readline" aria-hidden="true"><i data-progress></i></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     KEPALA — bar dua tautan + tools (rujuk Katherine Pihl: 40px napas)
+     ══════════════════════════════════════════════════════════ -->
+<header class="topbar" data-topbar>
+  <div class="shell shell--wide">
+    <div class="topbar__row">
+
+      <a class="brand" href="#top" data-cursor-grow>
+        <span class="brand__glyph" aria-hidden="true">N</span>
+        <span class="brand__name">Nama&nbsp;Kamu</span>
+        <span class="brand__mark">Perancang — Pengembang</span>
+      </a>
+
+      <nav class="nav" id="nav" data-nav aria-label="Navigasi utama">
+        <a class="nav__a" href="#kerja">Kerja</a>
+        <a class="nav__a" href="#arsip">Arsip</a>
+        <a class="nav__a" href="#tentang">Tentang</a>
+        <a class="nav__a" href="#kontak">Kontak</a>
+      </nav>
+
+      <div class="tools">
+        <p class="clock" data-clock title="Waktu Indonesia Barat">--.--</p>
+
+        <button class="tool" type="button" data-cmd-open data-cursor-grow>
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6.6"/><path d="m19.6 19.6-3.3-3.3"/></svg>
+          <span class="tool__k">⌘K</span>
+          <span class="visually-hidden">Buka perintah cepat</span>
+        </button>
+
+        <button class="tool tool--icon" type="button" data-theme-toggle data-cursor-grow aria-label="Ganti tema">
+          <svg class="i i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.6v2M12 19.4v2M2.6 12h2M19.4 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+          <svg class="i i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11z"/></svg>
+        </button>
+
+        <button class="tool tool--icon nav-btn" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+          <svg class="i i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3.5 8.5h17M3.5 15.5h17"/></svg>
+          <svg class="i i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+
+    </div>
   </div>
-</body>
-</html>
+</header>
+
+<main id="main">
+
+  <!-- ════════════════════════════════════════════════════════
+       00 — HERO (display serif hanya di sini, rujuk Katherine Pihl)
+       ════════════════════════════════════════════════════════ -->
+  <section class="hero" id="top">
+    <div class="shell shell--wide">
+
+      <ul class="meta" data-enter style="--i:0">
+        <li><span class="ping" aria-hidden="true"></span> Terbuka untuk proyek baru</li>
+        <li>Indonesia · GMT+7</li>
+        <li><span data-clock-full>—</span></li>
+        <li class="meta__end">Portofolio 2026 — Vol. 03</li>
+      </ul>
+
+      <h1 class="display display--hero" data-split data-enter style="--i:1">
+        Antarmuka yang <em>tenang</em>, kerja yang tampak sepele dari luar.
+      </h1>
+
+      <div class="hero__foot">
+        <div class="hero__lead" data-enter style="--i:2">
+          <p class="lead">
+            Saya Nama Kamu. Saya merancang dan membangun situs web untuk studio,
+            produk, dan tim kecil — dengan dua janji: jelas sejak detik pertama,
+            cepat di jaringan yang buruk.
+          </p>
+          <div class="acts">
+            <a class="btn btn--fill" href="#kerja" data-magnet data-cursor-grow>
+              Lihat kerja terpilih
+              <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12h14"/><path d="m12.5 6 6 6-6 6"/></svg>
+            </a>
+            <button class="btn btn--quiet" type="button" data-copy="email@kamu.com" data-magnet data-cursor-grow>
+              Salin email
+              <span class="btn__note" data-copy-note>email@kamu.com</span>
+            </button>
+          </div>
+        </div>
+
+        <aside class="plate" data-enter style="--i:3" aria-label="Ringkasan profil">
+          <figure class="plate__figure">
+            <span class="plate__grid" aria-hidden="true"></span>
+            <span class="plate__initials" aria-hidden="true">NK</span>
+            <figcaption class="plate__cap">Foto / potret 4:5 — ganti di sini</figcaption>
+          </figure>
+          <dl class="plate__facts">
+            <div><dt>Peran</dt><dd>Front-end &amp; UI</dd></div>
+            <div><dt>Fokus</dt><dd>Performa, aksesibilitas</dd></div>
+            <div><dt>Waktu balas</dt><dd>&lt; 24 jam</dd></div>
+            <div><dt>Sejak</dt><dd>2023</dd></div>
+          </dl>
+        </aside>
+      </div>
+
+      <p class="scroll-cue" data-enter style="--i:4">
+        <span class="scroll-cue__line" aria-hidden="true"></span> Gulir
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       MARQUEE — daftar layanan (editorial, aksen tunggal)
+       ════════════════════════════════════════════════════════ -->
+  <div class="marquee" data-marquee aria-hidden="true">
+    <div class="marquee__track" data-marquee-track>
+      <span class="marquee__item">Perancangan antarmuka</span>
+      <span class="marquee__sep">✳</span>
+      <span class="marquee__item">Situs statis</span>
+      <span class="marquee__sep">✳</span>
+      <span class="marquee__item">Sistem desain</span>
+      <span class="marquee__sep">✳</span>
+      <span class="marquee__item">Penyempurnaan performa</span>
+      <span class="marquee__sep">✳</span>
+      <span class="marquee__item">Audit aksesibilitas</span>
+      <span class="marquee__sep">✳</span>
+      <span class="marquee__item">Prototipe interaktif</span>
+      <span class="marquee__sep">✳</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════
+       BARIS KLIEN — tipografi, bukan logo gambar
+       ════════════════════════════════════════════════════════ -->
+  <section class="clients" data-reveal>
+    <div class="shell">
+      <p class="tick">Pernah bekerja bersama</p>
+      <ul class="clients__row">
+        <li>Studio Coklat</li>
+        <li>Pasar Tani</li>
+        <li>Ruang Kopi</li>
+        <li>Bank Nusantara</li>
+        <li>Kelana Wisata</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       01 — KERJA TERPILIH (grid 3 kolom ber-hairline, rujuk Grafik)
+       ════════════════════════════════════════════════════════ -->
+  <section class="sec" id="kerja">
+    <div class="shell">
+
+      <header class="sec__head" data-reveal>
+        <div class="sec__label">
+          <span class="tick">01 — Kerja terpilih</span>
+          <h2 class="display display--md">Enam masalah, enam bentuk.</h2>
+        </div>
+        <div class="sec__aside">
+          <p class="sec__count"><b data-visible-count>6</b> dari <span data-total-count>6</span> proyek</p>
+          <p class="sec__hint">Klik kartu untuk membuka ringkasan</p>
+        </div>
+      </header>
+
+      <div class="filters" data-filters role="group" aria-label="Saring proyek" data-reveal>
+        <button class="chip is-on" type="button" data-filter="all">Semua</button>
+        <button class="chip" type="button" data-filter="produk">Produk</button>
+        <button class="chip" type="button" data-filter="situs">Situs</button>
+        <button class="chip" type="button" data-filter="sistem">Sistem desain</button>
+        <button class="chip" type="button" data-filter="buruk">Eksperimen</button>
+      </div>
+
+      <div class="grid-work" data-grid data-reveal style="--i:1">
+
+        <article class="card" data-tags="produk" data-project="p1">
+          <header class="card__top">
+            <span class="card__no">01</span>
+            <span class="card__tag">Produk</span>
+          </header>
+          <a class="card__media" href="#" data-case="p1" data-cursor-grow aria-label="Buka ringkasan Dasbor Analitik">
+            <span class="card__grid" aria-hidden="true"></span>
+            <span class="card__word" aria-hidden="true">Dasbor</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title">Dasbor Analitik</h3>
+            <p class="card__desc">Grafik, tabel, dan penyaring untuk puluhan ribu baris data — tetap terbaca di ponsel kelas menengah.</p>
+            <ul class="card__tags"><li>Vue</li><li>Chart</li><li>A11y</li></ul>
+          </div>
+          <footer class="card__foot">
+            <span>2026</span>
+            <span>Produk · UI</span>
+            <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/></svg>
+          </footer>
+        </article>
+
+        <article class="card" data-tags="situs" data-project="p2">
+          <header class="card__top">
+            <span class="card__no">02</span>
+            <span class="card__tag">Situs</span>
+          </header>
+          <a class="card__media" href="#" data-case="p2" data-cursor-grow aria-label="Buka ringkasan Peluncuran Produk">
+            <span class="card__grid" aria-hidden="true"></span>
+            <span class="card__word" aria-hidden="true">Peluncuran</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title">Peluncuran Produk</h3>
+            <p class="card__desc">Satu halaman panjang yang menuntun pembaca dari cerita sampai daftar tunggu, tanpa menghalangi dengan animasi.</p>
+            <ul class="card__tags"><li>HTML</li><li>GSAP-lite</li><li>SEO</li></ul>
+          </div>
+          <footer class="card__foot">
+            <span>2025</span>
+            <span>Situs · Editorial</span>
+            <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/></svg>
+          </footer>
+        </article>
+
+        <article class="card" data-tags="produk" data-project="p3">
+          <header class="card__top">
+            <span class="card__no">03</span>
+            <span class="card__tag">Produk</span>
+          </header>
+          <a class="card__media" href="#" data-case="p3" data-cursor-grow aria-label="Buka ringkasan Kasir Toko">
+            <span class="card__grid" aria-hidden="true"></span>
+            <span class="card__word" aria-hidden="true">Kasir</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title">Kasir Toko</h3>
+            <p class="card__desc">Pencatatan transaksi harian yang jalan penuh di peramban, bisa dipakai saat jaringan mati.</p>
+            <ul class="card__tags"><li>Offline</li><li>IndexedDB</li><li>PWA</li></ul>
+          </div>
+          <footer class="card__foot">
+            <span>2025</span>
+            <span>Produk · Aplikasi</span>
+            <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/></svg>
+          </footer>
+        </article>
+
+        <article class="card" data-tags="sistem" data-project="p4">
+          <header class="card__top">
+            <span class="card__no">04</span>
+            <span class="card__tag">Sistem</span>
+          </header>
+          <a class="card__media" href="#" data-case="p4" data-cursor-grow aria-label="Buka ringkasan Sistem Desain Kecil">
+            <span class="card__grid" aria-hidden="true"></span>
+            <span class="card__word" aria-hidden="true">Sistem</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title">Sistem Desain Kecil</h3>
+            <p class="card__desc">Skala spasi 8pt, tangga tipe modular, dan 24 komponen dasar untuk tim berisi tiga orang.</p>
+            <ul class="card__tags"><li>Token</li><li>CSS</li><li>Dokumentasi</li></ul>
+          </div>
+          <footer class="card__foot">
+            <span>2024</span>
+            <span>Sistem · Fondasi</span>
+            <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/></svg>
+          </footer>
+        </article>
+
+        <article class="card" data-tags="buruk" data-project="p5">
+          <header class="card__top">
+            <span class="card__no">05</span>
+            <span class="card__tag">Eksperimen</span>
+          </header>
+          <a class="card__media" href="#" data-case="p5" data-cursor-grow aria-label="Buka ringkasan Tipografi Generatif">
+            <span class="card__grid" aria-hidden="true"></span>
+            <span class="card__word" aria-hidden="true">Tipografi</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title">Tipografi Generatif</h3>
+            <p class="card__desc">Uji coba huruf yang meregang mengikuti gerak kursor — sekaligus latihan menahan godaan.</p>
+            <ul class="card__tags"><li>Canvas</li><li>Variable font</li></ul>
+          </div>
+          <footer class="card__foot">
+            <span>2024</span>
+            <span>Eksperimen</span>
+            <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/></svg>
+          </footer>
+        </article>
+
+        <article class="card" data-tags="situs" data-project="p6">
+          <header class="card__top">
+            <span class="card__no">06</span>
+            <span class="card__tag">Situs</span>
+          </header>
+          <a class="card__media" href="#" data-case="p6" data-cursor-grow aria-label="Buka ringkasan Studio Foto">
+            <span class="card__grid" aria-hidden="true"></span>
+            <span class="card__word" aria-hidden="true">Studio</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title">Studio Foto</h3>
+            <p class="card__desc">Galeri dengan pemuatan bertahap dan rasio asli, tetap tajam saat dibuka di layar besar.</p>
+            <ul class="card__tags"><li>Masonry</li><li>Lazy</li><li>AVIF</li></ul>
+          </div>
+          <footer class="card__foot">
+            <span>2023</span>
+            <span>Situs · Galeri</span>
+            <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/></svg>
+          </footer>
+        </article>
+
+      </div>
+
+      <p class="empty" data-empty hidden>Belum ada proyek dengan saringan itu.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       02 — ARSIP (tabel + pratinjau mengikuti kursor)
+       ════════════════════════════════════════════════════════ -->
+  <section class="sec" id="arsip">
+    <div class="shell">
+      <header class="sec__head" data-reveal>
+        <div class="sec__label">
+          <span class="tick">02 — Arsip</span>
+          <h2 class="display display--md">Semua yang pernah saya kirim.</h2>
+        </div>
+        <div class="sec__aside">
+          <p class="sec__hint">Arahkan kursor ke baris untuk melihat cuplikan</p>
+        </div>
+      </header>
+
+      <div class="table" data-reveal>
+        <div class="table__head" aria-hidden="true">
+          <span>Tahun</span><span>Proyek</span><span>Peran</span><span>Bidang</span>
+        </div>
+        <ul class="table__body" data-archive>
+          <li class="row" data-preview="p1" data-plate="Dasbor" data-desc="Produk · 2026">
+            <a class="row__link" href="#" data-case="p1" data-cursor-grow>
+              <span class="row__year">2026</span>
+              <span class="row__name">Dasbor Analitik</span>
+              <span class="row__role">Front-end</span>
+              <span class="row__kind">Produk</span>
+              <svg class="i row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/></svg>
+            </a>
+          </li>
+          <li class="row" data-preview="p2" data-plate="Peluncuran" data-desc="Situs · 2025">
+            <a class="row__link" href="#" data-case="p2" data-cursor-grow>
+              <span class="row__year">2025</span>
+              <span class="row__name">Peluncuran Produk</span>
+              <span class="row__role">Desain + Bangun</span>
+              <span class="row__kind">Situs</span>
+              <svg class="i row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/></svg>
+            </a>
+          </li>
+          <li class="row" data-preview="p3" data-plate="Kasir" data-desc="Produk · 2025">
+            <a class="row__link" href="#" data-case="p3" data-cursor-grow>
+              <span class="row__year">2025</span>
+              <span class="row__name">Kasir Toko</span>
+              <span class="row__role">Front-end</span>
+              <span class="row__kind">Produk</span>
+              <svg class="i row__arrow" viewBox="0 0 24 24" fill
